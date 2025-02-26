@@ -2135,7 +2135,7 @@ How can I open the index.html file if xdg-open fails?,data-engineering-zoomcamp,
 What is a solution for opening index.html on Windows Subsystem for Linux?,data-engineering-zoomcamp,71b1984b
 Where can I find a solution if xdg-open doesn't work after installing xdg-utils?,data-engineering-zoomcamp,71b1984b
 What could cause an error when executing a Python script with a shebang line in Unix-like environments?,data-engineering-zoomcamp,d452b490
-How can the '' character lead to problems with Python interpreter paths?,data-engineering-zoomcamp,d452b490
+"How can the ' ' character lead to problems with Python interpreter paths?",data-engineering-zoomcamp,d452b490
 What command can I use to check the path to the Python 3 interpreter on my system?,data-engineering-zoomcamp,d452b490
 How do I convert line endings of a script from Windows-style to Unix-style?,data-engineering-zoomcamp,d452b490
 What is a potential solution if there's an issue with the interpreter path in the shebang line?,data-engineering-zoomcamp,d452b490
@@ -2144,7 +2144,7 @@ How does windowing assist with analyzing streaming data?,data-engineering-zoomca
 Can windowing in SQL help manage data over specific time intervals?,data-engineering-zoomcamp,707cae8f
 What types of boundaries can be set with windowing in SQL?,data-engineering-zoomcamp,707cae8f
 How does windowing organize streaming data for analysis?,data-engineering-zoomcamp,707cae8f
-What is the solution if I encounter a 'ModuleNotFoundError' related to 'kafka.vendor.six.moves' when using KafkaProducer in Jupyter Notebook for Module 6 Homework?,data-engineering-zoomcamp,ffbf3311
+"What is the solution if I encounter a 'ModuleNotFoundError' related to 'kafka.vendor.six.moves' when using KafkaProducer in Jupyter Notebook for Module 6 Homework?",data-engineering-zoomcamp,ffbf3311
 How can I resolve OAuth and authentication issues with GCP in Mage if I have configured the GOOGLE_SERVICE_ACC_KEY_FILEPATH correctly?,data-engineering-zoomcamp,ffbf3311
 What steps should I take if my Mage pipeline blocks fail due to profile path issues?,data-engineering-zoomcamp,ffbf3311
 How do I add API triggers to Mage pipelines using the CLI?,data-engineering-zoomcamp,ffbf3311
