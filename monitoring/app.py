@@ -3,6 +3,7 @@ import time
 import uuid
 
 from assistant import get_answer
+
 from db import (
     save_conversation,
     save_feedback,
@@ -28,6 +29,9 @@ def main():
     if "count" not in st.session_state:
         st.session_state.count = 0
         print_log("Feedback count initialized to 0")
+
+    if "feedback_given" not in st.session_state:
+        st.session_state.feedback_given = False
 
     # Course selection
     course = st.selectbox(
@@ -78,7 +82,10 @@ def main():
             )
             print_log("Conversation saved successfully")
             # Generate a new conversation ID for next question
-            st.session_state.conversation_id = str(uuid.uuid4())
+            # st.session_state.conversation_id = str(uuid.uuid4())
+
+            # Reset feedback status
+            st.session_state.feedback_given = False
 
     # Feedback buttons
     col1, col2 = st.columns(2)
@@ -90,6 +97,8 @@ def main():
             )
             save_feedback(st.session_state.conversation_id, 1)
             print_log("Positive feedback saved to database")
+
+            st.session_state.feedback_given = True
     with col2:
         if st.button("-1"):
             st.session_state.count -= 1
@@ -99,7 +108,14 @@ def main():
             save_feedback(st.session_state.conversation_id, -1)
             print_log("Negative feedback saved to database")
 
+            st.session_state.feedback_given = True
+
     st.write(f"Current count: {st.session_state.count}")
+
+    # Now regenerate ID *after* feedback
+    if st.session_state.feedback_given:
+        st.session_state.conversation_id = str(uuid.uuid4())
+        st.session_state.feedback_given = False
 
     # Display recent conversations
     st.subheader("Recent Conversations")
