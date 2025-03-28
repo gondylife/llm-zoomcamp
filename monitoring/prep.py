@@ -1,4 +1,5 @@
 import os
+import json
 import requests
 import pandas as pd
 from sentence_transformers import SentenceTransformer
@@ -21,9 +22,11 @@ def fetch_documents():
     print("Fetching documents...")
     # relative_url = "03-vector-search/eval/documents-with-ids.json"
     # docs_url = f"{BASE_URL}/{relative_url}?raw=1"
-    docs_url = "../documents-with-ids.json"
-    docs_response = requests.get(docs_url)
-    documents = docs_response.json()
+    # docs_response = requests.get(docs_url)
+    # documents = docs_response.json()
+    with open('../documents-with-ids.json', 'rt') as f_in:
+        documents = json.load(f_in)
+
     print(f"Fetched {len(documents)} documents")
     return documents
 
@@ -32,8 +35,8 @@ def fetch_ground_truth():
     print("Fetching ground truth data...")
     # relative_url = "03-vector-search/eval/ground-truth-data.csv"
     # ground_truth_url = f"{BASE_URL}/{relative_url}?raw=1"
-    ground_truth_url = "../ground-truth-data.csv"
-    df_ground_truth = pd.read_csv(ground_truth_url)
+    ground_truth = "../ground-truth-data.csv"
+    df_ground_truth = pd.read_csv(ground_truth)
     df_ground_truth = df_ground_truth[
         df_ground_truth.course == "machine-learning-zoomcamp"
     ]
